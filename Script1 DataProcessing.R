@@ -8,11 +8,11 @@ library(writexl)
 library(scales)
 
 #-----------------------------------------------------------------------------------------------------------
-# Process raw data from Ajay
+# Process raw data
 ##------------------------------------------------------------------------------------------------------
 # Read and tidy
 frm.df <- read_xlsx(
-  path = "MyData_2021to2025.xlsx",
+  path = "MyData.xlsx",
   sheet = "Analysis", guess_max = 3000
 )
 
@@ -169,7 +169,7 @@ frm_location <- frm_table %>%
                 Category = Category, Quantity = Quantity)
 
 Batch1_species <- unique(frm_location$Species_bin)
-writeLines(sort(Batch1_species), "ajay_taxalist.txt")
+writeLines(sort(Batch1_species), "taxa_list.txt")
 species_location <- frm_location
 
 ## Heat-map map
